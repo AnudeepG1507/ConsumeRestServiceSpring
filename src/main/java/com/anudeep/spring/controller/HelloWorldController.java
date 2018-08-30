@@ -31,7 +31,7 @@ public class HelloWorldController {
 	   
 	   RestTemplate restTemplate = new RestTemplate();
 	   
-	   testClass[] users = (testClass[]) restTemplate.getForObject("http://localhost:8080/StudentRestAPI/api/students", testClass[].class);
+	   testClass[] users = (testClass[]) restTemplate.getForObject("http://localhost:8080/StudentRest/api/students", testClass[].class);
 	   
 	   return new ModelAndView("index", "users", users);
 
@@ -55,7 +55,7 @@ public class HelloWorldController {
 		
 		
 		RestTemplate restTemplate = new RestTemplate();
-		testClass testPost = restTemplate.postForObject("http://localhost:8080/StudentRestAPI/api/students", theStudent, testClass.class);
+		testClass testPost = restTemplate.postForObject("http://localhost:8080/StudentRest/api/students", theStudent, testClass.class);
 		
 		
 		return "redirect:/";
@@ -65,7 +65,7 @@ public class HelloWorldController {
 	public String deleteCustomer(@RequestParam("studentId") int theId) {
 		
 		RestTemplate restTemplate = new RestTemplate();
-		String entityUrl = "http://localhost:8080/StudentRestAPI/api/students" + "/" + theId;
+		String entityUrl = "http://localhost:8080/StudentRest/api/students" + "/" + theId;
 		restTemplate.delete(entityUrl);
 		
 		
@@ -79,7 +79,7 @@ public class HelloWorldController {
 									Model theModel) {
 
 		RestTemplate restTemplate = new RestTemplate();
-		testClass tempStudent = restTemplate.getForObject("http://localhost:8080/StudentRestAPI/api/students" + "/" + theId, testClass.class);
+		testClass tempStudent = restTemplate.getForObject("http://localhost:8080/StudentRest/api/students" + "/" + theId, testClass.class);
 		
 		
 		// set customer as a model attribute to pre-populate the form
@@ -94,7 +94,7 @@ public class HelloWorldController {
 	                                    Model theModel) {
 		 
 		 RestTemplate restTemplate = new RestTemplate();
-		 testClass[] theStudents = (testClass[]) restTemplate.getForObject("http://localhost:8080/StudentRestAPI/api/students/name/"+ theSearchName, testClass[].class);
+		 testClass[] theStudents = (testClass[]) restTemplate.getForObject("http://localhost:8080/StudentRest/api/students/name/"+ theSearchName, testClass[].class);
 
 	       
 	                
