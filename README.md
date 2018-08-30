@@ -1,1 +1,1 @@
-# ConsumeRestServiceSpring
+# StudentRestAPIConsumer
