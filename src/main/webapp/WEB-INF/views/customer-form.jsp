@@ -42,7 +42,6 @@
       </div>
     </div>
   </form:form>
-  
   <p>
 			<a href="${pageContext.request.contextPath}">Back to List</a>
 		</p>
